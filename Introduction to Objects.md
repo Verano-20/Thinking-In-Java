@@ -39,11 +39,11 @@ There must also be code somewhere to satisfy these requests, which along with th
 A type has a method associated with every request, and when that request is made, the method is called.
 In the case of Light, we can write the following:
 
-Light lt = new Light();
+Light lt = new Light();  
 lt.on();
 
 A Light object is created by defining a reference 'lt' and calling 'new' to request a new object of that type.
-A request is made to lt by connecting the name of the object and the reqest with a dot.
+A request is made to lt by connecting the name of the object and the request with a dot.
 That's pretty much it.
 
 
