@@ -93,6 +93,43 @@ Once you've gained some experience, it will be reasonably obvious when you need 
 
 ### Inheritance ###
 
+We may find ourselves having defined a class for one purpose, and needing a similar class with slightly different characteristics and behaviour for another.
+Rather than writing a whole new class, we can take advantage of *inheritance*, to effectively clone the original class and make additions and modifications to the clone.
+If the original class ('base', 'super', 'parent') is changed, the clone class ('derived', 'inherited', 'sub', 'child') also reflects these changes.
+A base type contains all of the characteristics and behaviours that are shared among its derived types, representing the core concepts of some objects.
+The derived types express different ways this core can be realised.
+A common example is the 'shape' base class. This may have characteristics like 'size', 'colour', 'position', and behaviours like 'move', 'erase'.
+Specific shapes can be derived from this, like 'triangle', 'square', etc. Each derived type may have additional characteristics and behaviours, like calculating the area.
+The type heirarchy produced embodies these similarities and differences.
+
+When inheriting from an existing type, a new type is created.
+This new type contains all the members of the existing type (private members being hidden and inaccessible), and duplicates the interface of the base class.
+Since the type of a class is defined by its interface, *the derived class is the same type as the base class*.
+Consider the previous shape example; a circle *is a shape*.
+If a class is simply inherited, the method implementations base class will be applied in the derived class.
+This means the derived class has exactly the same type and behaviour as the base class.
+A simple way to change this is to add new methods to the derived class which aren't present in the base class.
+While this is often the perfect solution, you should check for the possibility that these new methods may also be needed in the base class.
+The second way to differentiate the derived class is to *override* a method on the base class.
+This is done by creating a new definition for the given method in the derived class.
+
+In Java the keyword for inheritance is *extends*.
+As we have seen, the implication that this means adding new methods to the interface is not always necessarily true, as we may only override existing methods.
+
+### Is-a vs is-like-a relationships ###
+
+The *substitution principle* is one way of treating inheritance.
+If a derived class overrides only methods present in the base class, both classes have exactly the same interface.
+This means an object of the derived class can be directly sustituted for an object of the base class; known as *pure substitution*.
+Some say this is the ideal way to treat inheritance, and this relationship between derived and base classes is known as an 'is-a' relationship.
+
+In other cases a derived type will have its interface extended with new methods.
+While this new type can still be substituted for the base type, the substitution isn't perfect because the new methods are not accessible from the base type.
+This means that whatever was built to use the base type won't be able to handle these new methods, and the new functionality in the derived type will be unused.
+These cases can be referred to as having 'is-like-a' relationships between the base and derived classes.
+
+### Interchangeable objects with polymorphism ###
+
 
 
 
