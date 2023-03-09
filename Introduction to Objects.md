@@ -130,6 +130,44 @@ These cases can be referred to as having 'is-like-a' relationships between the b
 
 ### Interchangeable objects with polymorphism ###
 
+It is often the case that we need to treat an object as its base type rather than its specific type.
+This enables us to write code that is valid for all types derived from the base type.
+Code targeting the base type is unaffected by the addition of new types, which greatly improves design and reduces maintenance.
+
+Since the generic implementation of a method in the base type may differ from the implementations in its derived types, the compiler cannot know at compile time exactly which piece of code will be executed.
+A non-OOP compiler will use *early binding* to generate a call to a specific function name, which the runtime system resolves to the absolute address of the code to be executed.
+This is not possible in OOP, so an alternative concept *late binding* is used instead.
+The compiler does ensure the method exists and the types are valid, but the code being called isn't known until run time.
+This process is covered in more detail in the *Polymorphism* chapter.
+In Java, dynamic binding (late binding) is the default behaviour and extra keywords are not needed to get polymorphism.
+
+Using the previous Shape example, we could write the following:
+
+void drawShape(Shape shape) {
+  shape.draw();
+}
+
+Circle circle = new Circle();
+Triangle triangle = new Triangle();
+
+drawShape(circle);
+drawShape(triangle);
+
+In this example, the 'drawShape()' method is expecting a Shape, but since a Circle or a Triangle *is a shape*, 'drawShape()' can treat it as one.
+This process of treating a derived type as its base type is known as *upcasting*.
+
+### The singly rooted heirarchy ###
+
+In Java, all classes ultimately inherit from the base class 'Object'.
+While other languages like C++ don't have this concept built in, the extra flexibility provided in those cases often comes with significant overhead.
+For pure OOP in Java, the singly rooted heirarchy has far more benefits that drawbacks.
+All objects share certain basic functionality, they can all be easily created on the heap, and argument passing is greatly simplified.
+It becomes much easier to implement a *garbage collector*, one of the fundamental advantages of Java over C++.
+There can never be an object whose type can't be determined, which is especially important in system-level operations like exception handling.
+
+### Containers ###
+
+
 
 
 
