@@ -143,15 +143,15 @@ In Java, dynamic binding (late binding) is the default behaviour and extra keywo
 
 Using the previous Shape example, we could write the following:
 
-void drawShape(Shape shape) {
-  shape.draw();
+void drawShape(Shape shape) {  
+  shape.draw();  
 }
 
-Circle circle = new Circle();
-Triangle triangle = new Triangle();
+Circle circle = new Circle();  
+Triangle triangle = new Triangle();  
 
-drawShape(circle);
-drawShape(triangle);
+drawShape(circle);  
+drawShape(triangle);  
 
 In this example, the 'drawShape()' method is expecting a Shape, but since a Circle or a Triangle *is a shape*, 'drawShape()' can treat it as one.
 This process of treating a derived type as its base type is known as *upcasting*.
