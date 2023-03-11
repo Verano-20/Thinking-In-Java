@@ -167,13 +167,27 @@ There can never be an object whose type can't be determined, which is especially
 
 ### Containers ###
 
+When solving a particular problem, it is generally not known exactly how many objects will be needed or how long they will last.
+This means we can't know how to store those objects, or how much space to create until run time.
+The solution to this is to use a *container* object, which holds references to other objects.
+This container can expand when necessary and will take care of the details of storing the objects it holds.
+Java comes with generic containers for many needs, including Lists, Maps, Sets, Queues, Trees, Stacks, etc.
+Different types of containers provide different interfaces and behaviours which are more suited to some problems than others.
+Some containers may have the same interface but different implementations which are more efficient in some cases, e.g. LinkedList and ArrayList.
 
+### Parameterized types (generics) ###
 
+Before Java SE5, containers held the universal Object type.
+When adding specific object references to these containers they would be upcast to the Object type, losing their specific character.
+So when fetching the reference back from the container, an Object reference would be returned.
+To get back the original type, we can use *downcasting*, the inverse to upcasting.
+However, remembering exactly what types are stored in a container so that the programmer can properly downcast and avoid exceptions trying to downcast to the wrong type is time consuming.
+The solution to this is to use a *parameterized type*; a class which the compiler can customize to work with particular types.
+For example, we can create a parameterized container which only accepts and fetches Shape types, as follows:
 
+ArrayList\<Shape> shapes = new ArrayList\<Shape>();
 
+Parameterized types are known as *generics* in Java, and have an impact on much of the code in this book.
 
-
-
-
-
+### Object creation & lifetime ###
 
