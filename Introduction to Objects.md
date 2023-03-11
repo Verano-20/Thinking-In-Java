@@ -191,3 +191,44 @@ Parameterized types are known as *generics* in Java, and have an impact on much 
 
 ### Object creation & lifetime ###
 
+Each created object requires resources in order to exist, most notably memory.
+It is crucial that objects which are no longer used are cleaned up to release the resources for other needs.
+In complex systems it becomes difficult to know when an object should be destroyed, as many parts of the system may use the same object.
+One approach seen in C++ which optimises for maximum speed at run time is to determine the storage and lifetime of an object when writing the code by placing the objects on the stack.
+This approach is often too restrictive for more general problems.
+
+The second approach is to create objects on the heap dynamically.
+In this approach the number of objects, their lifetimes, and their types, are determined at run time and added to the heap when needed.
+Allocating storage on the heap can take noticably more time than on the stack, however the greater flexibility provided in this approach is essential for solving general progamming problems.
+In addition, the generally complex nature of objects means the extra time required for memory management on the heap has a negligible impact on the creation of an object.
+
+Java uses the dynamic approach exclusively (with primitive types being a special case.)
+Objects are created using the *new* operator to build a dynamic instance of that object.
+The issue of an object's lifetime is handled by the *garbage collector* provided by Java.
+The garbage collector automatically determines when an object is no longer in use and destroys it, freeing up the memory it was using (but doesn't handle other aspects of cleaning up an object.)
+
+### Exception handling: dealing with errors ###
+
+Error handling has always been a difficult issue in programming, with many languages ignoring the issue entirely.
+Exception handling wires error handling directly into the programming language.
+An exception is an object that is 'thrown' from the site of an error and can be 'caught' by an appropriate exception handler.
+This exception handling is essentially a separate, parallel execution path that can be taken when things go wrong, and which doesn't intefere with the normally executing code.
+This makes it easier to write clean code since error checking is reduced, and unlike errors, exceptions cannot be ignored and must be dealt with at some point.
+This can mean providing a reliable way to recover from a bad situation and restore normal execution, resulting in more robust programs.
+
+In Java, exception handling was wired in from the beginning and is the single acceptable way to report errors.
+The compiler will give errors if exceptions are not handled properly.
+
+Note that exception handling is not an OOP feature, although exceptions in OOp languagtes are usually represented by an object.
+
+### Concurrent programming ###
+
+
+
+
+
+
+
+
+
+
