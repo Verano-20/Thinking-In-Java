@@ -219,16 +219,19 @@ This can mean providing a reliable way to recover from a bad situation and resto
 In Java, exception handling was wired in from the beginning and is the single acceptable way to report errors.
 The compiler will give errors if exceptions are not handled properly.
 
-Note that exception handling is not an OOP feature, although exceptions in OOp languagtes are usually represented by an object.
+Note that exception handling is not an OOP feature, although exceptions in OOP languages are usually represented by an object.
 
 ### Concurrent programming ###
 
+Handling more than one task at a time is a fundamental programming concept.
+Dividing a problem into serparately running tasks can make the overall program more responsive.
+This is the concept of *concurrency*, where each separately running task is called a *thread*.
+If a system has multiple processors available, each task can be assigned to a different processor and run in parallel.
+Having concurrency at the language level means this allocation of processors is done automatically.
+
+One issue with concurrency is shared resources, where multiple threads are trying to access the same resource simultaneuously.
+To solve this, shared resources must be locked while in use, then released once the task is completed.
+Java's concurrency is built into the language.
 
 
-
-
-
-
-
-
-
+(The rest of this chapter talks about out of date internet technologies, so will be omitted from these notes.)
