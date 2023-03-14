@@ -54,7 +54,7 @@ The wrapper classes enable you to create non-primitive objects on the heap to re
 
 |Primitive Type|Size|Wrapper Type|
 |---|---|---|
-|boolean|-|-|Boolean
+|boolean|-|Boolean|
 |char|16 bits|Character|
 |byte|8 bits|Byte|
 |short|16 bits|Short|
