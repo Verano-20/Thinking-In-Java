@@ -85,6 +85,39 @@ Arrays of primitives can also be created in Java.
 
 ### You never need to destroy an object ###
 
+Java handles all of the cleanup of variables automatically.
+
+#### Scoping ####
+
+*Scope* determines the visibility and lifetime of names defined within that scope.
+In Java, scope is determined using curly braces {}.
+A variable defined within a scope is available only to the end of that scope.
+Java does not have the C or C++ concept of 'hiding' a variable in a larger scope, e.g:
+
+{  
+  int x = 12;  
+  {  
+    int x = 34; // Illegal  
+  }  
+}
+
+#### Scope of objects ####
+
+Java objects have different lifetimes to primitives.
+An object created using *new* will continue to exist in memory past the end of the scope.
+However, the object reference will vanish at the end of the scope.
+This means there is no way to access the object after the end of the scope.
+
+So if Java objects continue to exist, what stops them filling up the memory?
+Java's *garbage collector* manages this by looking at the objects created with *new* and releasing the memory of those which no longer have a reference.
+This means the programmer does not have to think about releaseing memory, and the 'memory leak' problem seen in other languages is eliminated.
+
+### Creating new data types: **class** ###
+
+Everything is an object, but what determines the type of an object?
+
+
+
 
 
 
