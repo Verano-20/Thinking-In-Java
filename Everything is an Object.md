@@ -110,14 +110,25 @@ This means there is no way to access the object after the end of the scope.
 
 So if Java objects continue to exist, what stops them filling up the memory?
 Java's *garbage collector* manages this by looking at the objects created with *new* and releasing the memory of those which no longer have a reference.
-This means the programmer does not have to think about releaseing memory, and the 'memory leak' problem seen in other languages is eliminated.
+This means the programmer does not have to think about releasing memory, and the 'memory leak' problem seen in other languages is eliminated.
 
 ### Creating new data types: **class** ###
 
 Everything is an object, but what determines the type of an object?
+Java, like many OOP languages, uses the *class* keyword to define a new type of object, e.g:
 
+class TypeName { /* Class body */ }
 
+This introduces a new type 'TypeName' which can be used to create a new object as follows:
 
+TypeName a = new TypeName();
+
+#### Fields and methods ####
+
+Classes can contain two types of elements: *fields* and *methods*.
+
+Fields (aka data members) are objects of any type, or a primitive type.
+Object fields must be initialised to connect them to an actual object.
 
 
 
