@@ -95,10 +95,10 @@ A variable defined within a scope is available only to the end of that scope.
 Java does not have the C or C++ concept of 'hiding' a variable in a larger scope, e.g:
 
 {  
-  int x = 12;  
-  {  
-    int x = 34; // Illegal  
-  }  
+&nbsp;&nbsp;int x = 12;  
+&nbsp;&nbsp;{  
+&nbsp;&nbsp;&nbsp;&nbsp;int x = 34; // Illegal  
+&nbsp;&nbsp;}  
 }
 
 #### Scope of objects ####
