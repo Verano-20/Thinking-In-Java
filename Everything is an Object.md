@@ -153,6 +153,82 @@ It is best practice to initialise the variables to ensure the values are legal f
 |float|0.0f|
 |double|0.0d|
 
+### Methods, arguments, and return values ###
+
+In Java, the word *method* is generally used in place of the word *function* used in other languages.
+This is only a syntactic difference, with methods and functions just meaning 'a way to do something'.
+Methods determine the messages an object can receive.
+
+The basic form of a method is as follows:
+
+ReturnType methodName( /* Argument list */ ) {
+&nbsp;&nbsp;/* Method body */
+}
+
+where:  
+- ReturnType describes the value that comes back from the method when it is called.
+- The argument list gives the names and types of the information to pass into the method.
+- The method name and argument list uniquely identify the method; this is reffered to as the method's *signature*.
+
+Methods can only be created as part of a class, and can only be called for an object.
+An exception to this is static methods, which can be called for the class itself, and will be covered later.
+If an object is unable to perform a method, attempting to call that method will result in a compile time error.
+Methods are called much like fields are, using dot notation, e.g:
+
+objectName.methodName(arg1, arg2, arg3);
+
+The act of calling a method is commonly referred to as 'sending a message to an object'.
+
+#### The argument list ####
+
+Methods take in objects as arguments, so the arguments list must specify the types and names to use for each one.
+As with everywhere else in Java, passing objects is actually done under the hood by passing the object references (with the exception of primitive types.)
+Passing objects into a method which do not match the expected types will result in a compile time error.
+
+The *return* keyword is used within methods, and does two things.
+First, it means 'exit the method'.
+Second, the method will produce the value placed right after the return statement.
+Any type can be returned from a method, or none at all by using void.
+Consider these examples:
+
+boolean flag() { return true; }  
+double naturalLogBase() { return 2.718; }  
+void nothing() { return; }  
+void nothing2() {}
+
+Note that when the return type is void, the return keyword is only used to exit the method.
+If the code reaches the end of the method, the return keyword is therefore unnecessary as the method will exit anyway.
+If the return type is non-void the compiler will force you to return the appropriate type of value.
+
+### Building a Java program ###
+
+There are several other issues to understand at this stage.
+
+#### Name visibility ####
+
+To avoid the common problem of names clashing when the same name is used in multiple modules, Java takes a fresh approach.
+Java libraries should use your internet domain name in reverse, since the domain names are guaranteed to be unique.
+For example, if your domain name is mindview.net, a utility library would be named 'net.mindview.utility'.
+The dots after the reversed domain name represent subdirectories.
+
+#### Using other components ####
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
