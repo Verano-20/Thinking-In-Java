@@ -129,6 +129,30 @@ Classes can contain two types of elements: *fields* and *methods*.
 
 Fields (aka data members) are objects of any type, or a primitive type.
 Object fields must be initialised to connect them to an actual object.
+Each object keeps its own storage for its fields.
+
+Members of an object are referred to using dot notation, i.e 'objectReference.member'.
+An object may contain a reference to another object which contains data you'd like to access, in which case you would just 'connect the dots', e.g:
+
+myPlane.leftTank.capacity = 100;
+
+####  Default values for primitive members ####
+
+Java assigns default values to primitive values *only* when they are used as a member of a class.
+This does not apply to local variables, which are not fields of a class.
+It is best practice to initialise the variables to ensure the values are legal for your program.
+
+|Primitive Type|Default|
+|---|---|
+|boolean|false|
+|char|'\u0000' (null)|
+|byte|(byte) 0|
+|short|(short) 0|
+|int|0|
+|long|0L|
+|float|0.0f|
+|double|0.0d|
+
 
 
 
