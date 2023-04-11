@@ -213,13 +213,55 @@ The dots after the reversed domain name represent subdirectories.
 
 #### Using other components ####
 
+When using a predefined class in your program, the compiler needs to know where to find it.
+If the class exists in the same source code file it's being called from, it can just be used.
+Java eliminates the 'forward referencing' problem so the class can be used even if it is referenced later in the file.
 
+For classes that exist in some other file, you must use the *import* keyword.
+This will tell the compiler to bring in a package (a library of classes) with no ambiguities as to where it may be.
+Standard Java libraries don't bother with the long, reversed domain names, so for example:
 
+import java.util.ArrayList;
 
+This will enable us to use the ArrayList class in our file.
+If a package contains a number of classes we want to use, we can also use a '\*' to indicate a wildcard import, e.g.
 
+import java.util.*;
 
+This will enable us to use all classes in java.util.
 
+#### The static keyword ####
 
+A *static* field or method is one that is not tied to any particular object instance of a class.
+This means that they can be called even if an object of that class does not exist, as opposed to non-static fields and methods which must be called through a created object so they know the particular object they are working with.
+While static methods don't need an object instance, they can't directly access non-static fields and methods without referring to a named object.
+
+To make a field or method static you place the keyword before the definition, e.g.
+
+class StaticTest {  
+&nbsp;&nbsp;static int i = 27;  
+}
+
+In this case, every created instance of the StaticTest class will share the same storage for i.
+Static fields can be accessed the same way as non-static fields when there is an object instance, but they can also be referenced directly as follows:
+
+StaticTest.i++;
+
+This will add 1 to the variable, which will be reflected no matter how it is accessed elsewhere since the storage for i is shared.
+Using the class name in this way is the preferred method of referring to a static variable.
+
+Static methods are accessed in a similar way, for example:
+
+class Incrementable {  
+&nbsp;&nbsp;static void increment() { StaticTest.i++; }  
+}
+
+Incrementable.increment();
+
+The static keyword applied to a method does not affect how data is created in the same way it does when applied to a field.
+However, it enables a method to be called without creating an object, which is essential in defining the 'main()' entry method for a Java application.
+
+### Your first Java program ###
 
 
 
