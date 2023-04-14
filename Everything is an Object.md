@@ -263,7 +263,32 @@ However, it enables a method to be called without creating an object, which is e
 
 ### Your first Java program ###
 
+Here is a complete program.
 
+// HelloDate.java
+import java.util.*
+
+public class HelloDate {  
+&nbsp;&nbsp;public static void main(String[] args) {  
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Hello, it's: ");  
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(new Date());  
+&nbsp;&nbsp;}  
+}
+
+The import statements are placed at the beginning of the file to bring in any extra classes this file will need.
+The 'java.lang' library is automatically brought in to every Java file so it doesn't need to be imported explicitly.
+The 'out' field on 'System' is static so an instance of System doesn't need to be created to use it.
+'println' will take whatever is given to it as an arg, print it to the console and end with a new line.
+When passing an instance of 'Date', it is automatically converted into a String for display.
+
+The name of the class is the same as the name of the file.
+It is a requirement that for a standalone program like this one of the classes in the file must have the same name as the file, and the compiler will complain if this isn't the case.
+This class must contain a method 'main()' with the standard signature and return type:
+
+public static void main(String[] args){}
+
+'public' means the method is available to the outside world (will be covered in more detail later.)
+The 'String[] args' argument to main holds any arguments passed from the command line.
 
 
 
