@@ -336,10 +336,38 @@ public class Documentation1 {
 &nbsp;public void f() {}  
 }
 
+Javadoc will only process documentation for public and proteceted members.
+It is possible to set a flag to include private members.
 
+The output of Javadoc is an HTML file which has the same standard format as the rest of the Java documentation.
 
+#### Embedded HTML ####
 
+(see book)
 
+#### Some example tags ####
 
+Javadoc supports many different doc tags, all of which are available in the JDK documentation.
+Here are a few useful ones:
 
+@param  
+Used for method documentation; '@param parameter-name description'.
 
+@return  
+Used for method documentation; '@return description'.
+
+@throws  
+Used for method documentation; '@throws fully-qualified-class-name description'.
+
+#### Documentation example ####
+
+(see book)
+
+### Coding style ###
+
+Some code style guidelines are available in the *Code Conventions for the Java Programming Language* from Sun, which can now be found on the Oracle website.
+
+### Summary ###
+
+The goal of this chapter is to show enough basic Java to write a simple program.
+The next two chapters will introduce basic operators and show how to control the flow of your program.
