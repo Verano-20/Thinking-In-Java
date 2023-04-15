@@ -290,6 +290,27 @@ public static void main(String[] args){}
 'public' means the method is available to the outside world (will be covered in more detail later.)
 The 'String[] args' argument to main holds any arguments passed from the command line.
 
+#### Compiling and running ####
+
+(This section contains info specific to the source code for this book which I won't be using.)
+
+### Comments and embedded documentation ###
+
+There are two types of comment in Java.
+
+The first type starts with a \*/, continues possibly across multiple lines, and ends with a \*/.
+It is common practice to start each new line with a \*, for example:
+
+/* This is a comment  
+&nbsp;* that continues  
+&nbsp;* across lines  
+&nbsp;\*/  
+
+This is no different to just saying:
+
+/* This is a comment that  
+continues across lines \*/
+
 
 
 
