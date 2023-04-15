@@ -298,7 +298,7 @@ The 'String[] args' argument to main holds any arguments passed from the command
 
 There are two types of comment in Java.
 
-The first type starts with a \*/, continues possibly across multiple lines, and ends with a \*/.
+The first type starts with a '/\*', continues possibly across multiple lines, and ends with a '\*/'.
 It is common practice to start each new line with a \*, for example:
 
 /* This is a comment  
@@ -311,9 +311,30 @@ This is no different to just saying:
 /* This is a comment that  
 continues across lines \*/
 
+The second type of comment is a single line comment which starts with '//' and runs to the end of the line, e.g:
 
+// This is a one line comment
 
+#### Comment documentation ####
 
+Maintaining code documentatin has always been a problem, particularly when the code and documentation are kept separately.
+Java solves this by keeping the documentation in the same file as the code, and provides a special comment syntax to mark the documentation.
+The tool to extract these comments is called *Javadoc*, and is part of the JDK.
+
+#### Syntax ####
+
+Javadoc commands occur within comennts starting with '/\*\*', and ending with '\*/' as usual.
+There are two primary ways to use Javadoc; embed HTML or use 'doc tags'.
+
+Comment documentation can be attached to classes, fields, or methods, for example:
+
+/** A class comment \*/  
+public class Documentation1 {  
+&nbsp;/** A field comment \*/  
+&nbsp;public int i;  
+&nbsp;/** A method comment \*/  
+&nbsp;public void f() {}  
+}
 
 
 
