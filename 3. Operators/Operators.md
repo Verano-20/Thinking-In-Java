@@ -110,14 +110,14 @@ A trailing character after a literal value establishes its type.
 
 Hexadecimal (base 16) is denoted by a leading '0x' or '0X' follwed by 0-9 or a-f (uppercase or lowercase.)
 
-Octal (base 8) is denoted by a leasing zero and digits from 0-7.
+Octal (base 8) is denoted by a leading zero and digits from 0-7.
 
 If a variable is initialised with a value greater than it can hold the compiler will give an error message.
-In the case of char, byte, and short, the compiler will automatically make the value an int and force you to use a *narrowing cast* for the assignment (discussed later.)
+In the case of char, byte, and short, the compiler will automatically make the value an int and force you to use a *narrowing cast* for the assignment (discussed later in this chapter.)
 
 #### Exponential notation ####
 
-In Java, 'e' means refers to base 10.
+In Java, 'e' refers to base 10.
 Uppercase 'E' and lowercase 'e' behave the same.
 Take care not to confuse this with 'e' in the scientific world which refers to the base of natural logarithms, which is available in Java using 'Math.E'.
 
@@ -149,17 +149,17 @@ If 'boolean-exp' is false, 'value1' is evaluated and its value produced.
 
 Using the ternary operator produces more concise code, but can often be less readable than a regular if-else, so use it wisely.
 
-### _String_ operator + and += ###
+### String operator + and += ###
 
 A special usage of the '+' and '+=' operators is that they can be used to concatenate Strings.
 There is some intersting behaviour produced when using non-String operands:
 
 int x = 1, y = 2;  
-System.out.println("string " + x + y); // string 12
-System.out.println("string " + (x + y)); // string 3
+System.out.println("string " + x + y); // string 12  
+System.out.println("string " + (x + y)); // string 3  
 System.out.println("" + x); // shorthand for Integer.toString()
 
-In the first println statement, x and y are converted to Strings first and then concatenated.
+In the first println() statement, x and y are converted to Strings first and then concatenated.
 In the second, the brackets are used to control the order of evaluation of the expression, so the ints are added together before being converted into a String.
 
 ### Common pitfalls when using operators ###
@@ -176,31 +176,31 @@ There are two types of casts, *widening* and *narrowing*.
 A widening cast is a conversion from a type that holds less data to a type that holds more, e.g. from an int to a long.
 This is something Java will do automatically since no data will be lost in the process. e.g:
 
-int i = 200;
+int i = 200;  
 long lng = (long) i; // the cast here is not strictly needed as Java will do it automatically, but can help provide clarity
 
 A narrowing cast is the inverse.
 In this process, data can be lost since the new data type cannot hold as much information as the previous.
 Since this is the case, Java forces you to use a cast, e.g:
 
-long lng = 200;
+long lng = 200;  
 int i = (int) lng; // cast is required
 
 #### Truncation and rounding ####
 
 When converting from a float or a double to an int for example, Java will simply truncate the digits to the right of the decimal point rather than rounding to the nearest integer, e.g:
 
-float above = 0.7f;
-double below = 0.4;
-int intAbove = (int) above; // 0
+float above = 0.7f;  
+double below = 0.4;  
+int intAbove = (int) above; // 0  
 int intBelow = (int) below; // 0
 
 If we do want to round to the nearest integer, we can use 'Math.round()' from java.lang, e.g:
 
 
-float above = 0.7f;
-double below = 0.4;
-int intAbove = Math.round(above); // 1
+float above = 0.7f;  
+double below = 0.4;  
+int intAbove = Math.round(above); // 1  
 int intBelow = Math.round(below); // 0
 
 
